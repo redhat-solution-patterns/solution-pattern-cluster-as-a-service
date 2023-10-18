@@ -8,6 +8,54 @@
 what is this workshop and what will be learned
 
 == Installing the workshop environment
-=== Before getting started
-=== Installing the environment
+In this workshop we will be creating two ROSA clusters in two different AWS accounts using a Github Workflow, which is a deployment pipeline. GitHub Actions job uses Terraform code to create the clusters.
+
+These are the requirements for the workshop:
+
+- Two AWS accounts with admin privileges.
+- GitHub account and access to GitHub.
+
 == Delivering the workshop
+- We need two AWS accounts with admin privileges to spin up an EC2 machine.
+  ** Note: If you are a Red Hatter, you can follow the below steps for getting two AWS accounts:
+  *** Login to https://demo.redhat.com/catalog and create the two AWS accounts using this catalog item: https://demo.redhat.com/catalog?search=aws&item=babylon-catalog-prod%2Fsandboxes-gpte.sandbox-open.prod
+
+- For each AWS account, we will be running the below steps:
+  **  Create an EC2 machine with an admin role attached to it. Ensure that ansible is installed on this machine. If using Amazon linux3, run these commands to install ansible:
+  *** sudo dnf install python3-pip
+  *** pip install ansible
+  ** Fork this repo main branch: https://github.com/gmidha1/Terraform-code-k8s
+  ** Change the directory to playbooks.
+  ** Export two environment variables, where first one is aws account id and second one is aws s3 bucket, which will store our Terraform tfstate file.
+  *** AWS_ACCOUNT_ID
+  *** AWS_BUCKET
+  ** Change the value of repo in assumeroletpl.json file.
+  ** Run the ansible playbook using this command: ansible-playbook ./aws-prereq.yaml . This will create the OIDC for github repo, IAM role used for GitHub workflow and S3 bucket.
+  ** From the output of ansible playbook command, create secrets in Github repository. Go to your repo in Github UI and go to Settings → Security → Secrets and Variables → Actions. Add/Change the value of BUCKET_TF_STATE and ROLE_ARN for the respective AWS account.
+
+[link=github_secrets.png, window="_blank"]
+image::github_secrets.png[width=100%]
+- Add the pull token in the GitHub Secrets. Token is available in  https://console.redhat.com/openshift/ 
+- Now update the cluster name in these two files, commit and push the code to your forked repo.
+  ** https://github.com/gmidha1/Terraform-code-k8s/blob/main/rosa-dev/cluster.tf#L80
+  ** https://github.com/gmidha1/terraform-code-k8s/blob/main/rosa-prod/cluster.tf#L80
+- As soon as the commit is pushed, the GitHub Actions workflow will be triggered and it will create two separate ROSA clusters in two different AWS accounts. We can see in the below image two jobs completed and created the ROSA clusters in AWS accounts.
+
+[link=caas_cluster_creation.png, window="_blank"]
+image::caas_cluster_creation.png[width=100%]
+
+-  If we run the workflow again manually, Terraform will compare the tfstate file with code and if there are no changes, then the job will complete with no changes applied as shown below.
+
+[link=caas_jobs_rerun.png, window="_blank"]
+image::caas_jobs_rerun.png[width=100%]
+
+- Two ROSA clusters are ready for use and we can deploy the applications onto these.
+
+
+
+
+
+
+  
+
+

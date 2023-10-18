@@ -1,5 +1,5 @@
-name: solution-pattern-template
-title: Template Tutorial
+name: solution-pattern-cluster-as-a-service
+title: Cluster as a Service
 version: master
 nav:
   - modules/ROOT/nav.adoc
