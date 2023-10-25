@@ -1,4 +1,4 @@
-== The story behind this solution pattern
+== The Solution
 
 Kubernetes is an open-source container orchestration engine for automating deployment, scaling and management of containerized applications. Organizations use it heavily for production grade applications. Managing 100s of kubernetes clusters across multi region and multiple aws accounts is cumbersome. This can impact productivity and adversely affect the timelines for an organization. 
 
@@ -13,8 +13,5 @@ Each Organization’s goals should be:
 * Reduce or eliminate long-term credentials for systems access, including automation tools and cloud platforms.
 
 Red Hat has a premium managed Openshift offering (ROSA) in AWS. In this pattern, we will be demonstrating how we can use a CI/CD platform such as GitHub workflows and provision our multiple ROSA clusters in one or multiple AWS accounts. All of this, while also relying on AWS STS as a best-practice in cloud authentication for cluster deployment.
-
-
-== The Solution
 
 This solution pattern demonstrates how we can provision multiple ROSA clusters using a CI/CD pipeline directly from GitHub itself. In the workshop, We will be provisioning two clusters in two different AWS accounts directly from the github repository.
