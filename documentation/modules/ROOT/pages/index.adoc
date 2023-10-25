@@ -1,4 +1,4 @@
-= Solution Patterns: Cluster as a Service
+= Solution Pattern: Cluster as a Service
 :page-layout: home
 :sectnums:
 :sectlinks:
