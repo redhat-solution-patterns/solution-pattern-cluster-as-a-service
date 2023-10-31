@@ -1,11 +1,8 @@
-= Solution Pattern: Name Template
+= Solution Pattern: Cluster as a Service
 :sectnums:
 :sectlinks:
 :doctype: book
 
-= Workshop
-
-what is this workshop and what will be learned
 
 == Installing the workshop environment
 In this workshop we will be creating two ROSA clusters in two different AWS accounts using a Github Workflow, which is a deployment pipeline. GitHub Actions job uses Terraform code to create the clusters.
@@ -17,8 +14,11 @@ These are the requirements for the workshop:
 
 == Delivering the workshop
 - We need two AWS accounts with admin privileges to spin up an EC2 machine.
-  ** Note: If you are a Red Hatter, you can follow the below steps for getting two AWS accounts:
-  *** Login to https://demo.redhat.com/catalog and create the two AWS accounts using this catalog item: https://demo.redhat.com/catalog?search=aws&item=babylon-catalog-prod%2Fsandboxes-gpte.sandbox-open.prod
+[NOTE]
+====
+Note: If you are a Red Hatter, you can follow the below steps for getting two AWS accounts: +
+Login to https://demo.redhat.com/catalog and create the two AWS accounts using this catalog item: https://demo.redhat.com/catalog?search=aws&item=babylon-catalog-prod%2Fsandboxes-gpte.sandbox-open.prod
+====
 
 - For each AWS account, we will be running the below steps:
   **  Create an EC2 machine with an admin role attached to it. Ensure that ansible is installed on this machine. If using Amazon linux3, run these commands to install ansible:

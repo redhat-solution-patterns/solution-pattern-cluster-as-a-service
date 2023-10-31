@@ -6,7 +6,7 @@
 xref:index.adoc[{counter:module}. Solution Pattern]::
 +
 xref:index.adoc#caas[{counter:submodule1}. What is Cluster as a Service] +
-xref:01-pattern#_the_solution[{counter:submodule1}. The solution] +
+xref:index.adoc#_the_solution[{counter:submodule1}. The solution] +
 xref:index.adoc#_explore_more_solution_patterns[{counter:submodule1}. Explore more solution patterns]
 +
 xref:02-architecture.adoc[{counter:module}. Architecture]::

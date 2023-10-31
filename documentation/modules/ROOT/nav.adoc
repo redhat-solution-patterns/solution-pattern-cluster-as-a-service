@@ -1,8 +1,6 @@
 * xref:index.adoc[{counter:module}. Home page]
 ** xref:index.adoc#caas[{module}.{counter:submodule1} What is Cluster as a Service]
 ** xref:01-pattern#_the_solution[{module}.{counter:submodule1} The solution]
-** xref:index.adoc#_content_overview[{module}.{counter:submodule1} Content Overview]
-** xref:index.adoc#_content_overview[{module}.{counter:submodule1} Explore more solution patterns]
 
 * xref:02-architecture.adoc[{counter:module}. Architecture]
 ** xref:02-architecture.adoc#in_depth[{module}.{counter:submodule2}. An in-depth look at the solution's architecture]
@@ -15,4 +13,4 @@
 ** xref:04-workshop.adoc#_installing_the_workshop_environment[{module}.{counter:submodule4}. Installing the workshop environment]
 ** xref:04-workshop.adoc#deliver_wksp[{module}.{counter:submodule4}. Delivering the workshop]
 
-* https://redhat-solution-patterns.github.io/[{counter:module}. Other Red Hat Solution Patterns]
+* https://redhat-solution-patterns.github.io/[Explore Red Hat Solution Patterns^]

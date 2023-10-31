@@ -8,8 +8,6 @@ This solution pattern brings an architectural solution demonstrating how easily 
 
 *Contributors*: _https://github.com/gmidha1[Gaurav Midha (Red Hat)^]_
 
-include::content-overview.adoc[]
-
 [#caas]
 == What is Cluster as a service
 
